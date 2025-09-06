@@ -7,15 +7,15 @@ export default function Home() {
       <header className="fixed w-full top-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <Image
                 src="/calcutta-leaf-logo.jpeg"
                 alt="Calcutta Leaf Logo"
-                width={50}
-                height={50}
-                className="rounded-lg"
+                width={40}
+                height={40}
+                className="rounded-lg sm:w-[50px] sm:h-[50px]"
               />
-              <h1 className="text-2xl font-bold text-logo-green">Calcutta Leaf</h1>
+              <h1 className="text-lg sm:text-2xl font-bold text-logo-green">Calcutta Leaf</h1>
             </div>
             <nav className="hidden md:flex space-x-8">
               <a href="#home" className="text-gray-700 hover:text-logo-green transition-colors">Home</a>
@@ -23,33 +23,41 @@ export default function Home() {
               <a href="#about" className="text-gray-700 hover:text-logo-green transition-colors">About</a>
               <a href="#contact" className="text-gray-700 hover:text-logo-green transition-colors">Contact</a>
             </nav>
-            <button className="bg-logo-green text-white px-6 py-2 rounded-full hover:bg-logo-green-dark transition-colors">
-              Begin Your Journey
+            {/* Mobile menu button */}
+            <button className="md:hidden p-2 rounded-lg text-gray-700 hover:text-logo-green" aria-label="Menu">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <button className="bg-logo-green text-white px-3 py-2 sm:px-6 sm:py-2 rounded-full text-sm sm:text-base hover:bg-logo-green-dark transition-colors">
+              <span className="hidden sm:inline">Begin Your Journey</span>
+              <span className="sm:hidden">Start</span>
             </button>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 via-white to-green-50">
+      <section id="home" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-            <div className="space-y-8">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh] sm:min-h-[80vh]">
+            <div className="space-y-6 sm:space-y-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight text-center lg:text-left">
                 Where Heritage
                 <span className="text-logo-green block">Meets Your Cup</span>
-                Across Bharat
+                <span className="hidden sm:inline">Across Bharat</span>
+                <span className="sm:hidden">Across India</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed text-center lg:text-left">
                 In the heart of Kolkata, where the Hooghly whispers ancient stories, we craft tea experiences 
                 that transcend time. Each blend carries the soul of Bengal&apos;s gardens, the warmth of our heritage, 
                 and a promise—to bring authentic Calcutta to every corner of India.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-logo-green text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-logo-green-dark transition-colors">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <button className="bg-logo-green text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-logo-green-dark transition-colors">
                   Discover Our Stories
                 </button>
-                <button className="border-2 border-logo-green text-logo-green px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 transition-colors">
+                <button className="border-2 border-logo-green text-logo-green px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-green-50 transition-colors">
                   Gift a Journey
                 </button>
               </div>

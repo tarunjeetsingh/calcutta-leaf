@@ -3,6 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Logo-specific green color palette */
+  --logo-green: #4a5d3a;
+  --logo-green-light: #6b7c5a;
+  --logo-green-lighter: #8b9c7a;
+  --logo-green-dark: #3a4d2a;
+  --logo-green-darker: #2a3d1a;
+  --logo-green-bg: #f5f7f3;
+  --logo-green-bg-light: #fafbf9;
+  /* Bridge brown from logo */
+  --bridge-brown: #8b4513;
+  --bridge-brown-light: #a0522d;
 }
 
 @theme inline {
@@ -10,6 +21,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Logo-based custom colors */
+  --color-brand-green: var(--logo-green);
+  --color-brand-green-hover: var(--logo-green-dark);
+  --color-brand-green-light: var(--logo-green-bg);
+  --color-brand-brown: var(--bridge-brown);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +36,141 @@
 }
 
 body {
-  background: var(--background);
+  background: white;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Brand color utilities */
+.bg-brand-green {
+  background-color: var(--logo-green);
+}
+
+.bg-brand-green-hover:hover {
+  background-color: var(--logo-green-dark);
+}
+
+.bg-brand-green-light {
+  background-color: var(--logo-green-bg);
+}
+
+.text-brand-green {
+  color: var(--logo-green);
+}
+
+.text-brand-brown {
+  color: var(--bridge-brown);
+}
+
+.border-brand-green {
+  border-color: var(--logo-green);
+}
+
+.gradient-brand-green {
+  background: linear-gradient(135deg, var(--logo-green-light) 0%, var(--logo-green) 100%);
+}
+
+.gradient-brand-hero {
+  background: linear-gradient(135deg, var(--logo-green) 0%, var(--logo-green-dark) 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--logo-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--logo-green-dark);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--logo-green);
+  outline-offset: 2px;
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Logo Green Utility Classes */
+.bg-logo-green {
+  background-color: var(--logo-green) !important;
+}
+
+.bg-logo-green-light {
+  background-color: var(--logo-green-light) !important;
+}
+
+.bg-logo-green-bg {
+  background-color: var(--logo-green-bg) !important;
+}
+
+.bg-logo-green-bg-light {
+  background-color: var(--logo-green-bg-light) !important;
+}
+
+.text-logo-green {
+  color: var(--logo-green) !important;
+}
+
+.text-logo-green-light {
+  color: var(--logo-green-light) !important;
+}
+
+.border-logo-green {
+  border-color: var(--logo-green) !important;
+}
+
+.hover\:bg-logo-green-dark:hover {
+  background-color: var(--logo-green-dark) !important;
+}
+
+.hover\:bg-logo-green-bg:hover {
+  background-color: var(--logo-green-bg) !important;
+}
+
+.hover\:text-logo-green:hover {
+  color: var(--logo-green) !important;
+}
+
+.hover\:text-logo-green-light:hover {
+  color: var(--logo-green-light) !important;
+}
+
+.from-logo-green {
+  --tw-gradient-from: var(--logo-green-light) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(107 124 90 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-logo-green {
+  --tw-gradient-to: var(--logo-green) var(--tw-gradient-to-position);
 }
